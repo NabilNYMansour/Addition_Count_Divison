@@ -1,0 +1,5 @@
+- The approach is correct: I/O is the way to think.
+
+- Do make entire tables for the arithmetic unit.
+
+- Draw a simple circuit first, then draw circuits with ICs, then make the actual thing.
