@@ -15,3 +15,9 @@ The following is how the plan is:
 - Once that is done, the idea remains that you take analog input, turn it into digital output using encoders, place that as circuit input
     take that digital output and place it in an 7 seg. LEDs.
     Of course, the inputs will have their own LEDs as well.
+
+
+Next steps:
+- Discuss the progress with Professor.
+- Start with the K-map of the first output digital value "s"
+- Get aquatinted with heavy K-map creation.
