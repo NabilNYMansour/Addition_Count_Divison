@@ -1,0 +1,17 @@
+The following is how the plan is:
+- User inputs 3 analog inputs: value_1, sign, value_2
+- value_1 and value_2 would have 1111111111111111 (16) inputs where each one represents a digital value.
+    For example, if the user inputs 00000000000001X then the value is 2 and so on.
+    The value before the 1 is an X because we don't care what it is (imagine if the user inputs value 1 and value 2, value 2 will be prioritized).
+    So value 0 is 000000000000000.
+    Essentially it's like a button that the user presses in order to put a value.
+- sign has the same logic as value logic, but instead, it will represent and convert as follows:
+    0001 is + which in binary (after encoding) should be 00.
+    001X is - which in binary should be 01.
+    01XX is + which in binary should be 10.
+    1XXX is / which should be in binary 11.
+- Using the table generator, you can identify the K-map of each output using https://charlie-coleman.com/experiments/kmap/
+    This will take time, but oh well.
+- Once that is done, the idea remains that you take analog input, turn it into digital output using encoders, place that as circuit input
+    take that digital output and place it in an 7 seg. LEDs.
+    Of course, the inputs will have their own LEDs as well.
