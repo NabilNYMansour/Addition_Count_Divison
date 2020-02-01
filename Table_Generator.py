@@ -40,53 +40,85 @@ def switcher(decimal):
 
 
 for i in range(10):
-    print(switcher(i))
+    print(changer(i , 4))
 
 # '''
 Result_plus = ""
 #----------------=ADDITION=----------------#
-for i in range(10):
-    for j in range(10):
+for i in range(16):
+    for j in range(16):
         if i + j < 10:
             ToSee = "0" + str(i+j)
         else:
             ToSee = str(i+j)
-        Result_plus += switcher(i) + " | " + "0001" + " | " + switcher(j) + " || " + "0" + changer(i+j, 7) + " || " + str(i) + "+" + str(j) + " = " + ToSee + "\n"
+        if i < 10:
+            num_1 = "0" + str(i)
+        else:
+            num_1 = str(i)
+        if j < 10:
+            num_2 = "0" + str(j)
+        else:
+            num_2 = str(j)
+        Result_plus += changer(i , 4) + " | " + "00" + " | " + changer(j , 4) + " || " + "0" + changer(i+j, 8) + " || " + num_1 + "+" + num_2 + " = " + ToSee + "\n"
 #------------------------------------------#
 
 Result_sub = ""
 #--------------=SUBTRACTION=---------------#
-for i in range(10):
-    for j in range(10):
+for i in range(16):
+    for j in range(16):
         if i < j:
             sign = "1"
             ToSee = str(i-j)
         else:
             sign = "0"
             ToSee = "0" + str(i-j)
-        Result_sub += switcher(i) + " | " + "001X" + " | " + switcher(j) + " || " + sign + changer(abs(i-j), 7) + " || " + str(i) + "-" + str(j) + " = " + ToSee + "\n"
+        if i < 10:
+            num_1 = "0" + str(i)
+        else:
+            num_1 = str(i)
+        if j < 10:
+            num_2 = "0" + str(j)
+        else:
+            num_2 = str(j)
+        Result_sub += changer(i , 4) + " | " + "01" + " | " + changer(j , 4) + " || " + sign + changer(abs(i-j), 8) + " || " + num_1 + "-" + num_2 + " = " + ToSee + "\n"
 #------------------------------------------#
 
 Result_mult = ""
 #--------------=MULTIPLICATION=------------#
-for i in range(10):
-    for j in range(10):
+for i in range(16):
+    for j in range(16):
         if i*j < 10:
             ToSee = "0" + str(i*j)
         else:
             ToSee = str(i*j)
-        Result_mult += switcher(i) + " | " + "01XX" + " | " + switcher(j) + " || " + "0" + changer(i*j, 7) + " || " + str(i) + "*" + str(j) + " = " +  ToSee + "\n"
+        if i < 10:
+            num_1 = "0" + str(i)
+        else:
+            num_1 = str(i)
+        if j < 10:
+            num_2 = "0" + str(j)
+        else:
+            num_2 = str(j)
+        Result_mult += changer(i , 4) + " | " + "10" + " | " + changer(j , 4) + " || " + "0" + changer(i*j, 8) + " || " + num_1 + "*" + num_2 + " = " +  ToSee + "\n"
 #------------------------------------------#
 
 Result_div = ""
 #----------------=DIVISION=----------------#
-for i in range(10):
-    for j in range(10):
+for i in range(16):
+    for j in range(16):
+        if i < 10:
+            num_1 = "0" + str(i)
+        else:
+            num_1 = str(i)
+        if j < 10:
+            num_2 = "0" + str(j)
+        else:
+            num_2 = str(j)
         if j == 0:
-            Result_div += switcher(i) + " | " + "1XXX" + " | " + switcher(j) + " || " + "01111111 || " + str(i) + "/0 = XX\n"
+            Result_div += changer(i , 4) + " | " + "11" + " | " + changer(j , 4) + " || " + "011111111 || " + num_1 + "/00 = XX\n"
         else:
             ToSee = "0" + str(i//j)
-            Result_div += switcher(i) + " | " + "1XXX" + " | " + switcher(j) + " || " + "0" + changer(i//j, 7) + " || " + str(i) + "/" + str(j) + " = " +  ToSee + "\n"
+            Result_div += changer(i , 4) + " | " + "11" + " | " + changer(j , 4) + " || " + "0" + changer(i//j, 8) + " || " + num_1 + "/" + num_2 + " = " +  ToSee + "\n"
 #------------------------------------------#
 
 print(Result_plus)
@@ -95,7 +127,7 @@ print(Result_mult)
 print(Result_div)
 
 file = open("Table.txt", 'w')
-file.write("abcdefghi | jklm | nopqrstuv || wxyz$&@! ||\n----------|------|-----------||----------||\n")
+file.write("abcd | ef | ghij || klmnopqrs ||\n-----|----|------||-----------||\n")
 file.write(Result_plus)
 file.write(Result_sub)
 file.write(Result_mult)
