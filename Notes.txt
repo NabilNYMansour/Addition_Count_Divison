@@ -19,5 +19,5 @@ The following is how the plan is:
 
 Next steps:
 - Discuss the progress with Professor.
-- Start with the K-map of the first output digital value "s"
+- Start with the K-map of the first output digital value "s" !!
 - Get aquatinted with heavy K-map creation.
