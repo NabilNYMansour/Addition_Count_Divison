@@ -19,5 +19,6 @@ The following is how the plan is:
 
 Next steps:
 - Discuss the progress with Professor.
-- Start with the K-map of the first output digital value "s" !!
-- Get aquatinted with heavy K-map creation.
+- Start with the K-map of the first output digital value "s" ||
+- Get aquatinted with heavy K-map creation. !!
+- Start analysis for 3_bit_divider table and compare it to the 2_bit_divider table.

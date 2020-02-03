@@ -148,3 +148,28 @@ file.write(Result_sub)
 file.write(Result_mult)
 file.write(Result_div)
 # '''
+
+counter = 1
+Result_div = ""
+#----------------=DIVISION=----------------#
+for i in range(8):
+    for j in range(8):
+        if i < 10:
+            num_1 = "0" + str(i)
+        else:
+            num_1 = str(i)
+        if j < 10:
+            num_2 = "0" + str(j)
+        else:
+            num_2 = str(j)
+        if i == 0:
+            Result_div += counterPrinter(counter) + changer(j , 3) + " | " + changer(i , 3) + " || " + "111 || " + num_2 + "/00 = XX\n"
+        else:
+            ToSee = "0" + str(j//i)
+            Result_div += counterPrinter(counter) + changer(j , 3) + " | " + changer(i , 3) + " || " + changer(j//i, 3) + " || " + num_2 + "/" + num_1 + " = " +  ToSee + "\n"
+        counter += 1
+#------------------------------------------#
+t = open("divider_table.txt", "w")
+t.write("     |abc | efg || qrs ||\n     |----|-----||-----||\n")
+t.write(Result_div)
+t.close()
