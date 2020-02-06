@@ -1,0 +1,5 @@
+/3:
+q0(a, b, c, d) = b'cd + a'bc' + ab'd + ab'c + acd
+q1(a, b, c, d) = a'bc + ab'
+q2(a, b, c, d) = ab
+this is wrong!!!!

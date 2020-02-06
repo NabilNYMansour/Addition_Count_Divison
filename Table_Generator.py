@@ -152,8 +152,8 @@ file.write(Result_div)
 counter = 1
 Result_div = ""
 #----------------=DIVISION=----------------#
-for i in range(8):
-    for j in range(8):
+for i in range(16):
+    for j in range(16):
         if i < 10:
             num_1 = "0" + str(i)
         else:
@@ -163,13 +163,13 @@ for i in range(8):
         else:
             num_2 = str(j)
         if i == 0:
-            Result_div += counterPrinter(counter) + changer(j , 3) + " | " + changer(i , 3) + " || " + "111 || " + num_2 + "/00 = XX\n"
+            Result_div += counterPrinter(counter) + changer(j , 4) + " | " + changer(i , 4) + " || " + "1111 || " + num_2 + "/00 = XX\n"
         else:
             ToSee = "0" + str(j//i)
-            Result_div += counterPrinter(counter) + changer(j , 3) + " | " + changer(i , 3) + " || " + changer(j//i, 3) + " || " + num_2 + "/" + num_1 + " = " +  ToSee + "\n"
+            Result_div += counterPrinter(counter) + changer(j , 4) + " | " + changer(i , 4) + " || " + changer(j//i, 4) + " || " + num_2 + "/" + num_1 + " = " +  ToSee + "\n"
         counter += 1
 #------------------------------------------#
-t = open("divider_table.txt", "w")
-t.write("     |abc | efg || qrs ||\n     |----|-----||-----||\n")
+t = open("4_bit_divider_table.txt", "w")
+t.write("     |abcd | efgh || pqrs ||\n     |-----|------||------||\n")
 t.write(Result_div)
 t.close()
