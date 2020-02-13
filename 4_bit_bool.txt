@@ -1,5 +1,18 @@
+/0:
+Always 1111
+/1:
+Same as A
+/2:
+Last three values of A become first three values of Q
 /3:
-q0(a, b, c, d) = b'cd + a'bc' + ab'd + ab'c + acd
-q1(a, b, c, d) = a'bc + ab'
-q2(a, b, c, d) = ab
-this is wrong!!!!
+q0(A3, A2, A1, A0) = A2'A1A0 + A3'A2A1' + A3A2'A0 + A3A2'A1 + A3A1A0
+q1(A3, A2, A1, A0) = A3'A2A1 + A3A2'
+q2(A3, A2, A1, A0) = A3A2
+/4:
+Last two values of A become first two values of Q
+/5:
+q0(A3, A2, A1, A0) = A3'A2A0 + A3'A2A1 + A3A2'A1' + A2A1A0
+q1(A3, A2, A1, A0) = A3A1 + A3A2
+/6:
+q0(A3, A2, A1, A0) = A3'A2A1 + A3A2'
+q1(A3, A2, A1, A0) = A3A2

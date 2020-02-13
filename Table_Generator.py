@@ -52,7 +52,7 @@ def counterPrinter(counter):
     else:
         return str(counter) + ") "
 
-# '''
+'''
 counter = 1
 Result_plus = ""
 #----------------=ADDITION=----------------#
@@ -148,7 +148,7 @@ file.write(Result_sub)
 file.write(Result_mult)
 file.write(Result_div)
 # '''
-
+'''
 counter = 1
 Result_div = ""
 #----------------=DIVISION=----------------#
@@ -172,4 +172,29 @@ for i in range(16):
 t = open("4_bit_divider_table.txt", "w")
 t.write("     |abcd | efgh || pqrs ||\n     |-----|------||------||\n")
 t.write(Result_div)
+t.close()
+'''
+counter = 1
+Result_com = ""
+#---------------=COMPARATER=---------------#
+for i in range(16):
+    for j in range(16):
+        if i < 10:
+            num_1 = "0" + str(i)
+        else:
+            num_1 = str(i)
+        if j < 10:
+            num_2 = "0" + str(j)
+        else:
+            num_2 = str(j)
+        if i >= j:
+            ToGive = "0"
+        else:
+            ToGive = "1"
+        Result_com += counterPrinter(counter) + changer(j , 4) + " | " + changer(i , 4) + " || " + ToGive + " ||" + "\n"
+        counter += 1
+#------------------------------------------#
+t = open("comparater.txt", "w")
+t.write("     |abcd | efgh || p ||\n     |-----|------||---||\n")
+t.write(Result_com)
 t.close()
