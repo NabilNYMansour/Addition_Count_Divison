@@ -24,4 +24,6 @@ Next steps:
 - Start analysis for 3_bit_divider table and compare it to the 2_bit_divider table. !!
 
 - Buchberger's algorithm
-- Do circuit implementation research.
+- Do circuit implementation research. ||
+
+- Create the new circuit such that the counter takes values from the xor, not the registers.
