@@ -188,9 +188,9 @@ for i in range(16):
         else:
             num_2 = str(j)
         if i >= j:
-            ToGive = "0"
-        else:
             ToGive = "1"
+        else:
+            ToGive = "0"
         Result_com += counterPrinter(counter) + changer(j , 4) + " | " + changer(i , 4) + " || " + ToGive + " ||" + "\n"
         counter += 1
 #------------------------------------------#
