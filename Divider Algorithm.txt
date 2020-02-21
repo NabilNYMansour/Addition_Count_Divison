@@ -1,0 +1,21 @@
+Count = 0;
+Result = 0;
+Check = 0;
+If ((Numerator !< Denomenator) and (E = 1)
+{
+	Result++;
+	If (Result == Denomenator)
+	{
+		Check += Result
+		Result = 0;
+		Count++;
+	}
+	If (Check == Numerator)
+	{
+		Return Count;
+	}
+	Elif ((Check > Numerator) or (Denomenator == 1) or (Overflow == True))
+	{
+		Return Count - 1;
+	}
+}
