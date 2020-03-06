@@ -26,4 +26,4 @@ Next steps:
 - Buchberger's algorithm
 - Do circuit implementation research. ||
 
-- Create the new circuit such that the counter takes values from the xor, not the registers.
+- Create the new circuit such that the counter takes values from the xor, not the registers. ||

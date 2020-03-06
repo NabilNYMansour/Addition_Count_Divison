@@ -1,0 +1,60 @@
+.begin
+.org 3000
+
+ValueToBeReturned.equ 12! Memory location for Return Value
+
+Assigning:
+ld %r0,   %r1! %r1 = Count
+ld %r0,   %r2! %r2 = Result
+ld %r0,   %r3! %r3 = Check
+ld [Num], %r4! %r4 = Numerator
+ld [Den], %r5! %r5 = Denomenator
+
+IfDenIsZero:
+andcc %r5, %r5, %r0! If %r5(Denomenator) is zero
+be Error
+
+IfAllIsGood:
+subcc %r5, %r4, %r0! If %r4(Numerator) > or = %r5(Denomenator)
+bneg Start
+be IfDenIsOne
+
+Start:
+
+addcc %r2, 1, %r2! %r2(Result)++
+subcc %r2, %r5, %r0! See if %r2(Result) == %r5(Denomenator)
+be Resevoir
+ba Start
+
+Resevoir:
+addcc %r2, %r3, %r3! Throw %r2(Result) in %r3(Check)
+ld %r0, %r2! Make %r2 to zero
+addcc %r1, 1, %r1! %r1(Count)++
+
+IfCheckIsNumOrIsMore:
+subcc %r4, %r3, %r0! If %r3(Check) == %r4(Numerator)
+be Return
+bneg CountNegOne
+ba Start
+
+CountNegOne:
+subcc %r1, 1, %r1
+ba Return
+
+IfDenIsOne:
+st %r4, [ValueToBeReturned]! Save the Numerator
+ba Done
+
+Error:
+st %r1, [ValueToBeReturned]! Save nothing
+ba Done
+
+Return:
+st %r1, [ValueToBeReturned]! Save %r1(Count)
+
+Done:
+jmpl %r15+4, %r0! Return
+
+Num: !Numerator Value
+Den: !Denomenator Value
+.end
