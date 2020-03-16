@@ -1,7 +1,7 @@
 # Addition Counting Division Algorithm
 - This is an algorithm made to divide with low level hardware.
 - The algorithm utilizes addition counting method to evaluate the division of two integer values
-    up to n integers after the decimal points.
+    up to n integers after the decimal point.
 - This repository holds the following:
     - .txt files that explain the algorithm.
     - A python file that shows the algorithm in action.
