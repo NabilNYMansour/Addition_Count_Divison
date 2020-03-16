@@ -1,0 +1,16 @@
+Addition Count Division (Mansourian Division):
+
+
+- Quotient/Remainder:
+- ACD [MD] of x/y = MD(x/y) [or ACD(x/y)]
+- MD(x/y) = MDq(x/y) + MDr(x/y)
+- MDq(x/y) = ACQ (addition count quotient algorithm)
+- MDc(x/y) = the check value found from addition count quotient algorithm [which is the highest integer value that can be multiplied by y that is less than x]
+- MDr(x/y) = (x-MDc)/y
+
+- Decimal point:
+- let MD(x/y) = a1.a2a3a4...an
+- a0 = MDq0 = MDq(x/y)
+- a1 = MDq1 = MDq(MDr0(x/y) * 10)
+- a2 = MDq2 = MDq(MDr1(x/y) * 10)
+- ai = MDqi = MDqi = MDq(MDr(i-1)(x/y) *10)
